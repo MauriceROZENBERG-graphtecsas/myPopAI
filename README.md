@@ -218,8 +218,8 @@ MIT License - feel free to use, modify, and distribute
 
 ## Credits
 
-- **Design**: Custom futuristic/cyberpunk aesthetic
-- **Icons**: Font Awesome
+- **Design**: Custom aesthetic
+- **Icons**: Font Awesome and selected images
 - **Fonts**: Google Fonts (Manrope, Space Mono)
 
 ## Support
