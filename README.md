@@ -1,67 +1,66 @@
-# README
-
-# myPopAI - Web Applications Launcher / NoteBookLM source provider
+# myPopAI - Web Applications Launcher / NotebookLM Source Provider
 
 A modern, FREE cross-platform Progressive Web Application (PWA) launcher with a sleek professional design.
 
-No API dependance !
+**No API dependency required!**
 
-URL: [myPopAI](https://graphtec.fr/mypopai)
-
-## Why MyPopAI?   
-###  Documents and App Launcher
-
-**Web Launcher** - MypopAI is a mutltiplatform Universal Launcher for Web Documents and Apps.
-
-**NoteBookLM** - All myPopAI Assets are easily exported to NoteBookLM as web sources for further processing.
-
-### AI Prompt Generator support
-
-Tightly coupled to our [Bizelia AI Prompt Studio](https://graphtec.fr/bizelia-en) advanced, multi LLM AI Prompt Generator.
-
-## Benefits
-
-Manage efficiently your shared Docs, YouTube videos and Apps.
-
-Share these Assets with your partners.
-
-Improve NotebookLM web sources.
-
-
-## Features
+🔗 **[Launch myPopAI](https://graphtec.fr/mypopai)**
 
 ![myPopAI-logo](https://graphtec.fr/mypopai/myPopAI-logo-small.jpg)
 
 ![Version](https://img.shields.io/badge/version-1.0.4-blue)
 ![License](https://img.shields.io/badge/license-Apache2-green)
 
+## Why MyPopAI?
+
+### Documents and App Launcher
+
+**Web Launcher** - MyPopAI is a multiplatform universal launcher for web documents and apps.
+
+**NotebookLM** - All myPopAI assets are easily exported to NotebookLM as web sources for further processing.
+
+### AI Prompt Generator Support
+
+Tightly integrated with our [Bizelia AI Prompt Studio](https://graphtec.fr/bizelia-en) - an advanced, multi-LLM AI Prompt Generator.
+
+## Benefits
+
+- Efficiently manage your shared docs, YouTube videos, and apps
+- Share these assets with your partners
+- Enhance NotebookLM web sources
+
+## Features
 
 ### 🚀 Core Functionality
-- **Quick Launch**: Click [myPopAI](https://graphtec.fr/mypopai) to instantly open application in a new tab
-- **App Management**: Add, manage applications and Documents.
-- **Import/Export**: JSON-based configuration for easy backup and sharing.   
-Markdown Export for NotebookLM web sources.
+
+- **Quick Launch**: Click [myPopAI](https://graphtec.fr/mypopai) to instantly open applications in a new tab
+- **App Management**: Add and manage applications and documents
+- **Import/Export**: JSON-based configuration for easy backup and sharing; Markdown export for NotebookLM web sources
 - **PWA Support**: Install as a standalone app on desktop and mobile devices
-- **Data sharing** for easy sync
+- **Data Sharing**: Easy synchronization across devices
 
 ### 🎨 Modern Design
+
 - Fully responsive design (mobile, tablet, desktop)
 - Dark theme optimized for low-light environments
 
 ### 💾 Configuration
+
 - Session-based storage (apps persist during browser session)
 - Export configuration to JSON and Markdown files for backup and sharing
 - Import configuration from JSON file
-- Pre-loaded with []Bizelia AI Prompt Generator Studio](https://graphtec.fr/bizelia-en).
+- Pre-loaded with [Bizelia AI Prompt Generator Studio](https://graphtec.fr/bizelia-en)
 
 ## Installation
 
 ### Option 1: Open Directly
-Simply open [myPopAI](https://graphtec.fr/mypopai) in a modern web browser (Chrome, Firefox, Edge, Safari, Brave, DuckDuckPro...)
+
+Simply open [myPopAI](https://graphtec.fr/mypopai) in any modern web browser (Chrome, Firefox, Edge, Safari, Brave, DuckDuckGo, etc.)
 
 ### Option 2: Install as PWA
+
 1. Open the application in a supported browser
-2. Click the "Install" button in the header or banner
+2. Click the **Install** button in the header or banner
 3. Follow browser prompts to add to home screen/applications
 
 ## File Structure
@@ -74,28 +73,30 @@ myPopAI/
 ├── sw.js              # Service Worker for PWA functionality
 ├── manifest.json      # PWA manifest
 ├── config.json        # Example configuration file
-├── myPopAI logo       # Logo
+├── myPopAI-logo       # Logo
 └── README.md          # This file
+```
 
 ## Usage
 
 ### Adding Applications
+
 1. Click the **"+"** button in the header
 2. Fill in the form:
    - **Application Name**: Display name for the app
    - **URL / Path**: Full URL or local path
-   - **Icon**: Font Awesome class (e.g., `fas fa-envelope`) or emoji (e.g., 📧) /   
-   Add image file /   
-   Paste clipboard Image
-3. Click **"Save"**
+   - **Icon**: Font Awesome class (e.g., `fas fa-envelope`), emoji (e.g., 📧), image file, or pasted clipboard image
+3. Click **Save**
 
 ### Editing Applications
+
 1. Hover over an app card
 2. Click the **edit icon** (pencil)
 3. Update the information
-4. Click **"Save"**
+4. Click **Save**
 
 ### Deleting Applications
+
 1. Hover over an app card
 2. Click the **delete icon** (trash)
 3. Confirm deletion in the dialog
@@ -103,27 +104,26 @@ myPopAI/
 ### Import/Export Configuration
 
 **Export:**
-1. Click **"Import/Export"** button
-2. Click **"Export"** to save configuration as JSON file
+1. Click **Import/Export** button
+2. Click **Export** to save configuration as a JSON file
 
 **Import:**
-1. Click **"Import/Export"** button
-2. Click **"Import File"** to Paste JSON configuration dat form select file into the text areas
-3. Close popup window.
+1. Click **Import/Export** button
+2. Click **Import File** to paste JSON configuration data or select a file
+3. Close popup window
 
 ### Icon Options
 
-**Font Awesome Icons:** file
-Select Icon
+**Font Awesome Icons:**
+Select from the Font Awesome icon library
 
-**Emojis:** file
+**Emojis:**
 Simply use any emoji: 📧 🚀 💻 🎮 🎨 etc.
 
 ## Configuration File Format
 
 The configuration is stored as a JSON array:
 
-Placeholdery example
 ```json
 [
   {
@@ -144,7 +144,8 @@ Placeholdery example
 ## Technical Details
 
 ### Technologies Used
-- **No API** needed.
+
+- **No API** needed
 - **HTML5**: Semantic markup
 - **CSS3**: Custom properties, animations, grid, flexbox
 - **Vanilla JavaScript**: No framework dependencies
@@ -153,6 +154,7 @@ Placeholdery example
 - **Google Fonts**: Manrope, Space Mono
 
 ### PWA Features
+
 - Offline support via Service Worker
 - Installable on desktop and mobile
 - Standalone display mode
@@ -160,6 +162,7 @@ Placeholdery example
 - Theme customization
 
 ### Storage Notes
+
 - LocalStorage is attempted for persistence
 - Falls back to session-only storage in restricted environments (e.g., iframes)
 - Use Import/Export for cross-session persistence
@@ -167,6 +170,7 @@ Placeholdery example
 ## Customization
 
 ### Changing Colors
+
 Edit CSS variables in `styles.css`:
 
 ```css
@@ -179,6 +183,7 @@ Edit CSS variables in `styles.css`:
 ```
 
 ### Changing Fonts
+
 Update font imports in `index.html`:
 
 ```html
@@ -186,6 +191,7 @@ Update font imports in `index.html`:
 ```
 
 ### Default Apps
+
 Modify the `defaultApps` array in `app.js`:
 
 ```javascript
@@ -207,18 +213,18 @@ const defaultApps = [
 - Check browser privacy settings
 
 **PWA won't install:**
-- Ensure using HTTPS (or localhost)
-- Check that all PWA requirements are met
+- Ensure you're using HTTPS (or localhost)
+- Verify that all PWA requirements are met
 - Try a different browser
 
 **Icons not showing:**
 - Verify Font Awesome CDN is accessible
-- Check icon class names are correct
-- Use emojis as fallback
+- Check that icon class names are correct
+- Use emojis as a fallback
 
 ## License
 
-MIT License - feel free to use, modify, and distribute
+Apache 2.0 License - feel free to use, modify, and distribute
 
 ## Credits
 
@@ -231,16 +237,17 @@ MIT License - feel free to use, modify, and distribute
 For issues or questions:
 1. Check browser console for errors
 2. Verify all files are in the same directory
-3. Ensure using a modern browser
+3. Ensure you're using a modern browser
 4. Check internet connection for CDN resources
 
 ## Contact
 
-myPopAI is developed in France by GRAPHTEC SAS, established since 1991.  
+myPopAI is developed in France by GRAPHTEC SAS, established since 1991.
 
-Contact: Maurice ROZENBERG
-     
-email: [support email](mailto:graphtec.fr@gmail.com?Subject=Info_and_support_myPopAI)
+**Contact:** Maurice ROZENBERG
 
+📧 **Email:** [graphtec.fr@gmail.com](mailto:graphtec.fr@gmail.com?Subject=Info_and_support_myPopAI)
+
+---
 
 **Made with ❤️ for productivity enthusiasts**
