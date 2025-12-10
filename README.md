@@ -25,7 +25,7 @@ Share these Assets with your partners.
 
 Improve NotebookLM web sources.
 
-![myPopAI-logo]([vx_images/256164385763546.jpg](https://graphtec.fr/mypopai/myPopAI-logo.jpg) =204x)
+![myPopAI-logo](https://graphtec.fr/mypopai/myPopAI-logo.jpg)
 
 ![Version](https://img.shields.io/badge/version-1.0.4-blue)
 ![License](https://img.shields.io/badge/license-Apache2-green)
