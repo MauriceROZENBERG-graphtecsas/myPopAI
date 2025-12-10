@@ -233,7 +233,9 @@ For issues or questions:
 ## Contact
 
 myPopAI is developed in France by GRAPHTEC SAS, established since 1991.  
+
 Contact: Maurice ROZENBERG
+     
 email: [support email](mailto:graphtec.fr@gmail.com?Subject=Info_and_support_myPopAI)
 
 
