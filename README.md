@@ -1,6 +1,21 @@
-# myPopAI - Univeral Application Launcher a NotebookLM source provider
+# myPopAI - Web Applications Launcher / NotebookLM source provider
 
-A modern, cross-platform Progressive Web Application (PWA) launcher with a sleek futuristic design.
+A modern, FREE cross-platform Progressive Web Application (PWA) launcher with a sleek professional design.
+No API dependance !
+URL: [myPopAI](https://graphtec.fr/mypopai)
+
+## Why MyPopAI? Stop running after your Documntes and Apps!
+
+MyppAI is a mutltiplatform Universal Launcher for Web Doocuments and Apps.
+Notebook web sources: All myPopAI Assets are easily exported to NoteBookLM as web sources for further processing.
+
+Tightly coupled to our [Bizelia AI Prompt Studio](https://graphtec.fr/bizelia-en) advanced, multi LLM AI Prompt Generator.
+
+## Benefits
+
+Create and manage efficiently your shared Docs, YouTube videos and Apps.
+Shere these Assets with your partners
+Improve NotebookLM web sources possibilies.
 
 ![Version](https://img.shields.io/badge/version-1.0.0-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
@@ -9,46 +24,30 @@ A modern, cross-platform Progressive Web Application (PWA) launcher with a sleek
 
 ### 🚀 Core Functionality
 - **Quick Launch**: Click any app card to instantly open applications in a new tab
-- **App Management**: Add, edit, and delete application shortcuts
+- **App Management**: Add, edit, and delete applications and Documents.
 - **Import/Export**: JSON-based configuration for easy backup and sharing
 - **PWA Support**: Install as a standalone app on desktop and mobile devices
 
 ### 🎨 Modern Design
-- Futuristic cyberpunk aesthetic with neon cyan and magenta gradients
-- Animated background with rotating gradient effects
 - Smooth animations and transitions
 - Fully responsive design (mobile, tablet, desktop)
 - Dark theme optimized for low-light environments
 
 ### 💾 Configuration
 - Session-based storage (apps persist during browser session)
-- Export configuration to JSON file for backup
+- Export configuration to JSON and Markdown files for backup and sharing
 - Import configuration from JSON file
-- Pre-loaded with popular applications (Gmail, GitHub, YouTube, ChatGPT, Notion, Slack)
+- Pre-loaded with Bizelia AI Prompt Generator Studio.
 
 ## Installation
 
 ### Option 1: Open Directly
-Simply open `index.html` in a modern web browser (Chrome, Firefox, Edge, Safari)
+Simply open [myPopAI](https://graphtec.fr/mypopai) in a modern web browser (Chrome, Firefox, Edge, Safari, Brave, DuckDuckPro...)
 
 ### Option 2: Install as PWA
 1. Open the application in a supported browser
 2. Click the "Install" button in the header or banner
 3. Follow browser prompts to add to home screen/applications
-
-### Option 3: Host on Web Server
-```bash
-# Using Python
-python -m http.server 8000
-
-# Using Node.js
-npx http-server
-
-# Using PHP
-php -S localhost:8000
-```
-
-Then navigate to `http://localhost:8000`
 
 ## File Structure
 
@@ -60,8 +59,8 @@ myPopAI/
 ├── sw.js              # Service Worker for PWA functionality
 ├── manifest.json      # PWA manifest
 ├── config.json        # Example configuration file
+├── myPopAI logo       # Logo
 └── README.md          # This file
-```
 
 ## Usage
 
