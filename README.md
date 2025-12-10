@@ -3,7 +3,9 @@
 # myPopAI - Web Applications Launcher / NoteBookLM source provider
 
 A modern, FREE cross-platform Progressive Web Application (PWA) launcher with a sleek professional design.
+
 No API dependance !
+
 URL: [myPopAI](https://graphtec.fr/mypopai)
 
 ## Why MyPopAI?   
