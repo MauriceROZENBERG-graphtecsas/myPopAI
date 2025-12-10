@@ -9,9 +9,9 @@ URL: [myPopAI](https://graphtec.fr/mypopai)
 ## Why MyPopAI?   
 ###  Documents and App Launcher
 
-MypopAI is a mutltiplatform Universal Launcher for Web Documents and Apps.
+**Web Launcher** - MypopAI is a mutltiplatform Universal Launcher for Web Documents and Apps.
 
-All myPopAI Assets are easily exported to NoteBookLM as web sources for further processing.
+** NoteBookLM** - All myPopAI Assets are easily exported to NoteBookLM as web sources for further processing.
 
 ### AI Prompt Generator support
 
