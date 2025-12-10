@@ -1,0 +1,27 @@
+[
+    {
+        "id": 1,
+        "title": "Main Apps",
+        "apps": [
+            { "id": 101, "name": "Gmail", "url": "https://mail.google.com", "icon": "fas fa-envelope" },
+            { "id": 102, "name": "GitHub", "url": "https://github.com", "icon": "fab fa-github" },
+            { "id": 103, "name": "YouTube", "url": "https://youtube.com", "icon": "fab fa-youtube" }
+        ]
+    },
+    {
+        "id": 2,
+        "title": "AI Tools",
+        "apps": [
+            { "id": 201, "name": "ChatGPT", "url": "https://chat.openai.com", "icon": "🤖" },
+            { "id": 202, "name": "LLMs", "url": "https://graphtec.fr/bizelia-en/bizelia_prompt_express.HTML.html", "icon": "🗪" }
+        ]
+    },
+    {
+        "id": 3,
+        "title": "Productivity",
+        "apps": [
+            { "id": 301, "name": "Notion", "url": "https://notion.so", "icon": "fas fa-book" },
+            { "id": 302, "name": "Slack", "url": "https://slack.com", "icon": "fab fa-slack" }
+        ]
+    }
+]
