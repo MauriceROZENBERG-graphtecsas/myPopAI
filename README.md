@@ -26,12 +26,13 @@ Share these Assets with your partners.
 Improve NotebookLM web sources.
 
 
+## Features
+
 ![myPopAI-logo](https://graphtec.fr/mypopai/myPopAI-logo-small.jpg)
 
 ![Version](https://img.shields.io/badge/version-1.0.4-blue)
 ![License](https://img.shields.io/badge/license-Apache2-green)
 
-## Features
 
 ### 🚀 Core Functionality
 - **Quick Launch**: Click [myPopAI](https://graphtec.fr/mypopai) to instantly open application in a new tab
