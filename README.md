@@ -1,35 +1,46 @@
-# myPopAI - Web Applications Launcher / NotebookLM source provider
+# README
+
+# myPopAI - Web Applications Launcher / NoteBookLM source provider
 
 A modern, FREE cross-platform Progressive Web Application (PWA) launcher with a sleek professional design.
 No API dependance !
 URL: [myPopAI](https://graphtec.fr/mypopai)
 
-## Why MyPopAI? Stop running after your Documntes and Apps!
+## Why MyPopAI?   
+###  Documents and App Launcher
 
-MyppAI is a mutltiplatform Universal Launcher for Web Doocuments and Apps.
-Notebook web sources: All myPopAI Assets are easily exported to NoteBookLM as web sources for further processing.
+MypopAI is a mutltiplatform Universal Launcher for Web Documents and Apps.
+
+All myPopAI Assets are easily exported to NoteBookLM as web sources for further processing.
+
+### AI Prompt Generator support
 
 Tightly coupled to our [Bizelia AI Prompt Studio](https://graphtec.fr/bizelia-en) advanced, multi LLM AI Prompt Generator.
 
 ## Benefits
 
-Create and manage efficiently your shared Docs, YouTube videos and Apps.
-Shere these Assets with your partners
-Improve NotebookLM web sources possibilies.
+Manage efficiently your shared Docs, YouTube videos and Apps.
 
-![Version](https://img.shields.io/badge/version-1.0.0-blue)
-![License](https://img.shields.io/badge/license-MIT-green)
+Share these Assets with your partners.
+
+Improve NotebookLM web sources.
+.
+![myPopAI-logo](vx_images/256164385763546.jpg =204x)
+
+![Version](https://img.shields.io/badge/version-1.0.4-blue)
+![License](https://img.shields.io/badge/license-Apache2-green)
 
 ## Features
 
 ### 🚀 Core Functionality
-- **Quick Launch**: Click any app card to instantly open applications in a new tab
-- **App Management**: Add, edit, and delete applications and Documents.
-- **Import/Export**: JSON-based configuration for easy backup and sharing
+- **Quick Launch**: Click [myPopAI](https://graphtec.fr/mypopai) to instantly open application in a new tab
+- **App Management**: Add, manage applications and Documents.
+- **Import/Export**: JSON-based configuration for easy backup and sharing.   
+Markdown Export for NotebookLM web sources.
 - **PWA Support**: Install as a standalone app on desktop and mobile devices
+- **Data sharing** for easy sync
 
 ### 🎨 Modern Design
-- Smooth animations and transitions
 - Fully responsive design (mobile, tablet, desktop)
 - Dark theme optimized for low-light environments
 
@@ -37,7 +48,7 @@ Improve NotebookLM web sources possibilies.
 - Session-based storage (apps persist during browser session)
 - Export configuration to JSON and Markdown files for backup and sharing
 - Import configuration from JSON file
-- Pre-loaded with Bizelia AI Prompt Generator Studio.
+- Pre-loaded with []Bizelia AI Prompt Generator Studio](https://graphtec.fr/bizelia-en).
 
 ## Installation
 
@@ -65,11 +76,13 @@ myPopAI/
 ## Usage
 
 ### Adding Applications
-1. Click the **"Add App"** button in the header
+1. Click the **"+"** button in the header
 2. Fill in the form:
    - **Application Name**: Display name for the app
    - **URL / Path**: Full URL or local path
-   - **Icon**: Font Awesome class (e.g., `fas fa-envelope`) or emoji (e.g., 📧)
+   - **Icon**: Font Awesome class (e.g., `fas fa-envelope`) or emoji (e.g., 📧) /   
+   Add image file /   
+   Paste clipboard Image
 3. Click **"Save"**
 
 ### Editing Applications
@@ -87,33 +100,26 @@ myPopAI/
 
 **Export:**
 1. Click **"Import/Export"** button
-2. Click **"Download"** to save configuration as JSON file
+2. Click **"Export"** to save configuration as JSON file
 
 **Import:**
 1. Click **"Import/Export"** button
-2. Paste JSON configuration into the text area
-3. Click **"Import"**
+2. Click **"Import File"** to Paste JSON configuration dat form select file into the text areas
+3. Close popup window.
 
 ### Icon Options
 
-**Font Awesome Icons:**
-- Envelope: `fas fa-envelope`
-- GitHub: `fab fa-github`
-- Code: `fas fa-code`
-- Camera: `fas fa-camera`
-- Music: `fas fa-music`
+**Font Awesome Icons:** file
+Select Icon
 
-**Emojis:**
+**Emojis:** file
 Simply use any emoji: 📧 🚀 💻 🎮 🎨 etc.
-
-Browse more icons at:
-- [Font Awesome Icons](https://fontawesome.com/icons)
-- [Emojipedia](https://emojipedia.org/)
 
 ## Configuration File Format
 
 The configuration is stored as a JSON array:
 
+Placeholdery example
 ```json
 [
   {
@@ -131,17 +137,10 @@ The configuration is stored as a JSON array:
 ]
 ```
 
-## Browser Compatibility
-
-- ✅ Chrome 90+
-- ✅ Firefox 88+
-- ✅ Edge 90+
-- ✅ Safari 14+
-- ✅ Opera 76+
-
 ## Technical Details
 
 ### Technologies Used
+- **No API** needed.
 - **HTML5**: Semantic markup
 - **CSS3**: Custom properties, animations, grid, flexbox
 - **Vanilla JavaScript**: No framework dependencies
@@ -231,6 +230,11 @@ For issues or questions:
 3. Ensure using a modern browser
 4. Check internet connection for CDN resources
 
----
+## Contact
+
+myPopAI is developed in France by GRAPHTEC SAS, established since 1991.  
+Contact: Maurice ROZENBERG
+email: [support email](mailto:graphtec.fr@gmail.com?Subject=myPopAI info and support)
+
 
 **Made with ❤️ for productivity enthusiasts**
