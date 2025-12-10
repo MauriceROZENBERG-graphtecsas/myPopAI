@@ -11,7 +11,7 @@ URL: [myPopAI](https://graphtec.fr/mypopai)
 
 **Web Launcher** - MypopAI is a mutltiplatform Universal Launcher for Web Documents and Apps.
 
-** NoteBookLM** - All myPopAI Assets are easily exported to NoteBookLM as web sources for further processing.
+**NoteBookLM** - All myPopAI Assets are easily exported to NoteBookLM as web sources for further processing.
 
 ### AI Prompt Generator support
 
