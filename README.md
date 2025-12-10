@@ -1,4 +1,4 @@
-# myPopAI - Application Launcher
+# myPopAI - Univeral Application Launcher a NotebookLM source provider
 
 A modern, cross-platform Progressive Web Application (PWA) launcher with a sleek futuristic design.
 
