@@ -2,7 +2,7 @@
 
 A modern, FREE cross-platform Progressive Web Application (PWA) lauhncher with a sleek professional design.
 
-When a user needs to save an essential link—whether from a web page or a YouTube video —s implicity, speed and accessibility are essential.
+When a user needs to save an essential link—whether from a web page or a YouTube video —simplicity, speed and accessibility are essential.
 
 > **myPopA**I provides an efficient solution to store **Application and YouTube URLs** using a  direct, two-step process: 
 > 1. User simply copy the URL from their source application, 
