@@ -5,8 +5,7 @@ const urlsToCache = [
     '/styles.css',
     '/app.js',
     '/manifest.json',
-    '/myPopAI-logo.jpg',
-    '/myPopAI-logo.svg'
+    '/myPopAI-logo.jpg'
 ];
 
 // Install Service Worker
