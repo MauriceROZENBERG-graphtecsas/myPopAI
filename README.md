@@ -38,6 +38,7 @@ Tightly integrated with our [Bizelia AI Prompt Studio](https://graphtec.fr/bizel
 - **Import/Export**: JSON-based configuration for easy backup and sharing; Markdown export for NotebookLM web sources
 - **PWA Support**: Install as a standalone app on desktop and mobile devices
 - **Data Sharing**: Easy synchronization across devices
+- **Express Paste**: Quickly initiate adding a new application by attempting to paste a URL from your clipboard directly into the 'Add Application' form, with smart prompts for manual input if automatic paste isn't available.
 
 ### 🎨 Modern Design
 
@@ -87,6 +88,17 @@ myPopAI/
    - **URL / Path**: Full URL or local path
    - **Icon**: Font Awesome class (e.g., `fas fa-envelope`), emoji (e.g., 📧), image file, or pasted clipboard image
 3. Click **Save**
+
+### Using Express Paste
+
+The "Express Paste" feature streamlines the process of adding a new application or document.
+
+1.  Click the **"Express Paste"** button (`<i class="fas fa-paste"></i> Express Paste`) in the header.
+2.  The "Add Application" form will appear.
+3.  **Automatic Paste (Desktop/Supported Browsers)**: If your browser supports direct clipboard access, the URL field will be automatically pre-filled with the content from your clipboard.
+4.  **Manual Paste (Mobile/Restricted Browsers)**: If automatic paste isn't supported or fails, a message will prompt you to manually paste the URL into the field.
+5.  Complete the remaining fields (Application Name, Icon, Description) as needed. For YouTube links, the name and description might be automatically fetched.
+6.  Click **Save**.
 
 ### Editing Applications
 
