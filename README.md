@@ -1,6 +1,7 @@
 # myPopAI - Web Applications Launcher / NotebookLM Source Provider
 
 A modern, FREE cross-platform Progressive Web Application (PWA) lauhncher with a sleek professional design.
+
 **No API dependency required!**
 
 When a user needs to save an essential link—whether from a web page or a YouTube video —simplicity, speed and accessibility are essential.
