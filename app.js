@@ -214,6 +214,7 @@ function renderAppCard(app, sectionId) {
         <a href="${app.url}" target="_blank" class="app-card" data-app-id="${app.id}" data-section-id="${sectionId}">
             <div class="app-actions">
                 <button class="icon-btn edit-app" title="Edit App" data-app-id="${app.id}"><i class="fas fa-edit"></i></button>
+                <button class="icon-btn move-app" title="Move to another section" data-app-id="${app.id}"><i class="fas fa-random"></i></button>
                 <button class="icon-btn delete-app" title="Delete App" data-app-id="${app.id}"><i class="fas fa-trash"></i></button>
             </div>
             <div class="${iconContainerClass}">
@@ -237,6 +238,7 @@ function setupEventListeners() {
     });
     document.getElementById('themeToggle').addEventListener('click', toggleTheme);
     document.getElementById('addSectionBtn').addEventListener('click', openAddSectionModal);
+    document.getElementById('expressPasteBtn').addEventListener('click', handleExpressPaste);
 
     // Search Input
     document.getElementById('searchInput').addEventListener('input', (e) => {
@@ -266,6 +268,9 @@ function setupEventListeners() {
     document.getElementById('cancelSectionBtn').addEventListener('click', closeSectionModal);
     document.getElementById('sectionForm').addEventListener('submit', handleSectionFormSubmit);
 
+    // Move App Modal
+    document.getElementById('closeMoveAppModal').addEventListener('click', closeMoveAppModal);
+
     // Import/Export Modal
     document.getElementById('importExportBtn').addEventListener('click', openImportExportModal);
     document.getElementById('closeImportExport').addEventListener('click', closeImportExportModal);
@@ -290,6 +295,93 @@ function setupEventListeners() {
     document.getElementById('closeAboutModal').addEventListener('click', closeAboutModal);
 }
 
+async function addLinkToLastSection(url) {
+    if (!url) {
+        showToast('No URL provided.', 'error');
+        return;
+    }
+
+    // Simple validation for a URL
+    try {
+        new URL(url);
+    } catch (_) {
+        showToast('Invalid URL format.', 'error');
+        return;
+    }
+
+    if (sections.length === 0) {
+        showToast('No sections available. Please create a section first.', 'error');
+        return;
+    }
+
+    const lastSection = sections[sections.length - 1];
+    
+    const newApp = {
+        id: Date.now(),
+        name: url,
+        url: url,
+        icon: '',
+        description: ''
+    };
+
+    const isYouTube = /youtube\.com|youtu\.be/i.test(url);
+    if (isYouTube) {
+        showToast('Pasting YouTube link, fetching info...');
+        try {
+            const response = await fetch(`https://www.youtube.com/oembed?url=${encodeURIComponent(url)}&format=json`);
+            if (response.ok) {
+                const data = await response.json();
+                newApp.name = data.title;
+                newApp.description = `By ${data.author_name}`;
+            }
+        } catch (e) {
+            console.warn('Could not fetch YouTube oEmbed data for paste.', e);
+        }
+    }
+
+    lastSection.apps.push(newApp);
+    saveSections();
+    render();
+    showToast('Link added successfully!', 'success');
+}
+
+async function handleExpressPaste() {
+    if (sections.length === 0) {
+        showToast('No sections available. Please create a section first.', 'error');
+        return;
+    }
+    const lastSection = sections[sections.length - 1];
+    
+    // Open the modal for the last section
+    openAddAppModal(lastSection.id);
+
+    let pastedUrl = '';
+
+    if (navigator.clipboard && navigator.clipboard.readText) {
+        try {
+            const text = await navigator.clipboard.readText();
+            pastedUrl = text.trim();
+        } catch (err) {
+            console.error('Failed to read clipboard contents: ', err);
+            // Not a hard error, just fallback to manual input
+        }
+    }
+
+    const urlInput = document.getElementById('appUrl');
+    const nameInput = document.getElementById('appName');
+
+    if (pastedUrl) {
+        urlInput.value = pastedUrl;
+        showToast('URL pasted from clipboard! Please complete the details.', 'success');
+        // Trigger blur event to fetch metadata like title
+        urlInput.dispatchEvent(new Event('blur'));
+        nameInput.focus(); // Focus on name, since URL is filled
+    } else {
+        showToast('Please paste the URL and fill in the details.', 'info');
+        urlInput.focus(); // Focus on URL for manual paste
+    }
+}
+
 function addRenderEventListeners() {
     // Add App buttons
     document.querySelectorAll('.add-app').forEach(btn => {
@@ -298,12 +390,19 @@ function addRenderEventListeners() {
         });
     });
 
-    // Edit/Delete App buttons
+    // Edit/Delete/Move App buttons
     document.querySelectorAll('.edit-app').forEach(btn => {
         btn.addEventListener('click', e => {
             e.preventDefault();
             e.stopPropagation();
             openEditAppModal(parseInt(btn.dataset.appId));
+        });
+    });
+    document.querySelectorAll('.move-app').forEach(btn => {
+        btn.addEventListener('click', e => {
+            e.preventDefault();
+            e.stopPropagation();
+            openMoveAppModal(parseInt(btn.dataset.appId));
         });
     });
     document.querySelectorAll('.delete-app').forEach(btn => {
@@ -596,6 +695,53 @@ function handleIconPaste(event) {
     }
 }
 
+function openMoveAppModal(appId) {
+    const { app, section: currentSection } = findApp(appId);
+    if (!app) return;
+
+    editingAppId = appId; // Keep track of the app being moved
+
+    const sectionList = document.getElementById('moveAppSectionList');
+    sectionList.innerHTML = ''; // Clear previous list
+
+    const otherSections = sections.filter(s => s.id !== currentSection.id);
+
+    if (otherSections.length === 0) {
+        sectionList.innerHTML = '<p style="padding: 1rem; text-align: center;">No other sections available.</p>';
+    } else {
+        otherSections.forEach(section => {
+            const sectionButton = document.createElement('button');
+            sectionButton.className = 'section-move-button';
+            sectionButton.textContent = section.title;
+            sectionButton.addEventListener('click', () => moveApp(app.id, section.id));
+            sectionList.appendChild(sectionButton);
+        });
+    }
+
+    document.getElementById('moveAppModal').classList.add('active');
+}
+
+function moveApp(appId, newSectionId) {
+    const { app, section: oldSection } = findApp(appId);
+    const newSection = sections.find(s => s.id === newSectionId);
+
+    if (!app || !oldSection || !newSection) {
+        showToast('An error occurred while moving the app.', 'error');
+        return;
+    }
+
+    // Remove from old section
+    oldSection.apps = oldSection.apps.filter(a => a.id !== appId);
+    // Add to new section
+    newSection.apps.push(app);
+
+    saveSections();
+    render();
+    closeMoveAppModal();
+    showToast(`Moved '${app.name}' to '${newSection.title}'`, 'success');
+}
+
+
 // =================================================================================
 // Modal Management
 // =================================================================================
@@ -603,6 +749,7 @@ function closeAllModals() {
     document.querySelectorAll('.modal-overlay').forEach(modal => modal.classList.remove('active'));
     document.body.classList.remove('nav-active');
     closeAboutModal();
+    closeMoveAppModal();
 }
 function closeAppModal() {
     document.getElementById('appModal').classList.remove('active');
@@ -613,9 +760,14 @@ function closeSectionModal() {
     document.getElementById('sectionModal').classList.remove('active');
     editingSectionId = null;
 }
+function closeMoveAppModal() {
+    document.getElementById('moveAppModal').classList.remove('active');
+    editingAppId = null;
+}
 function closeImportExportModal() {
     document.getElementById('importExportModal').classList.remove('active');
 }
+
 function openAboutModal() {
     closeAllModals(); // Close any other open modals first
     document.getElementById('aboutModal').classList.add('active');
