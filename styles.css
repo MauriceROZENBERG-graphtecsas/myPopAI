@@ -10,6 +10,13 @@
     --border: #d2d2d7;
     --shadow: 0 1px 2px rgba(0,0,0,0.05);
     --shadow-lg: 0 8px 24px rgba(0,0,0,0.1);
+    --bg-input-url: #e9e9ed;
+    --accent-light-bg: #e5f1ff;
+    --success: #28a745;
+    --success-light-bg: #e9f7ec;
+    --danger: #dc3545;
+    --danger-light-bg: #f8d7da;
+
 }
 
 [data-theme="dark"] {
@@ -23,6 +30,13 @@
     --border: #38383a;
     --shadow: 0 2px 8px rgba(0,0,0,0.3);
     --shadow-lg: 0 8px 24px rgba(0,0,0,0.5);
+    --bg-input-url: #1a1a1a;
+    --accent-light-bg: #1a2a42;
+    --success: #30c553;
+    --success-light-bg: #1c3322;
+    --danger: #f25f6f;
+    --danger-light-bg: #3e1a1f;
+
 }
 
 * {
@@ -224,12 +238,14 @@ body.nav-active .nav {
 }
 
 .btn-primary {
-    background: var(--accent);
-    color: white;
+    background: var(--accent-light-bg);
+    color: var(--accent);
+    border: 1px solid var(--accent);
 }
 
 .btn-primary:hover {
-    background: var(--accent-hover);
+    background: var(--accent);
+    color: white;
 }
 
 .btn-secondary {
@@ -240,6 +256,28 @@ body.nav-active .nav {
 
 .btn-secondary:hover {
     background: var(--border);
+}
+
+.btn-success {
+    background: var(--success-light-bg);
+    color: var(--success);
+    border: 1px solid var(--success);
+}
+
+.btn-success:hover {
+    background: var(--success);
+    color: white;
+}
+
+.btn-danger {
+    background: var(--danger-light-bg);
+    color: var(--danger);
+    border: 1px solid var(--danger);
+}
+
+.btn-danger:hover {
+    background: var(--danger);
+    color: white;
 }
 
 /* Main Content */
@@ -582,7 +620,9 @@ body.nav-active .nav {
         padding: 1.5rem 1rem;
     }
     
-    #addSectionBtn span {
+    #addSectionBtn span,
+    #expressPasteBtn span,
+    #importExportBtn span {
         display: none;
     }
     
@@ -789,6 +829,41 @@ body.nav-active .nav {
         }
 
     
+
+#moveAppSectionList {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem; /* Space between list items */
+    padding: 0.5rem 0;
+}
+
+.section-move-button {
+    background: transparent;
+    color: var(--text-primary);
+    border: none;
+    padding: 1rem;
+    border-radius: 8px; /* Slightly smaller radius */
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    font-weight: 500;
+    text-align: left; /* Align text to the left */
+    width: 100%; /* Full width */
+}
+
+.section-move-button:hover {
+    background: var(--accent);
+    color: white;
+}
+
+/* Style for URL input in modal */
+label[for="appUrl"] {
+    font-weight: bold;
+}
+
+#appUrl {
+    border-width: 2px;
+    background: var(--bg-input-url);
+}
 
     
 
