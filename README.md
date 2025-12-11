@@ -1,8 +1,13 @@
 # myPopAI - Web Applications Launcher / NotebookLM Source Provider
 
-A modern, FREE cross-platform Progressive Web Application (PWA) launcher with a sleek professional design.
+A modern, FREE cross-platform Progressive Web Application (PWA) lauhncher with a sleek professional design.
 
-**No API dependency required!**
+When a user needs to save an essential link—whether from a web page or a YouTube video —s implicity, speed and accessibility are essential.
+
+> **myPopA**I provides an efficient solution to store **Application and YouTube URLs** using a  direct, two-step process: 
+> 1. User simply copy the URL from their source application, 
+> 2. User calls **myPopAI** app to store it immediately in a structured and user-friendly format for future retrieval.
+> **No API dependency required!**
 
 🔗 **[Launch myPopAI](https://graphtec.fr/mypopai)**
 
