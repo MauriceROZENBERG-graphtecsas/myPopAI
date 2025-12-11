@@ -10,11 +10,6 @@
   "icons": [
     {
       "src": "myPopAI-logo.jpg",
-      "sizes": "any",
-      "type": "image/svg+xml"
-    },
-    {
-      "src": "myPopAI-logo.jpg",
       "sizes": "192x192",
       "type": "image/jpeg",
       "purpose": "any"
@@ -27,5 +22,15 @@
     }
   ],
   "categories": ["productivity", "utilities"],
-  "lang": "en-US"
+  "lang": "en-US",
+  "share_target": {
+    "action": "share.html",
+    "method": "GET",
+    "enctype": "application/x-www-form-urlencoded",
+    "params": {
+      "title": "title",
+      "text": "text",
+      "url": "url"
+    }
+  }
 }
