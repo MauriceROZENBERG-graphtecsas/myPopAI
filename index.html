@@ -7,7 +7,7 @@
 
     <!-- PWA Manifest -->
     <link rel="manifest" href="manifest.json">
-    <link rel="icon" href="myPopAI-logo.webp" type="image/svg+xml">
+    <link rel="icon" href="myPopAI-logo-small.jpg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="myPopAI-logo.webp">
 
     <!-- Fonts -->
@@ -32,6 +32,14 @@
                 <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
                     <i class="fas fa-moon"></i>
                 </button>
+                <button class="btn btn-danger" id="expressPasteBtn">
+                    <i class="fas fa-paste"></i>
+                    <span>Express Paste</span>
+                </button>
+                <button class="btn btn-success" id="importExportBtn">
+                    <i class="fas fa-file-import"></i>
+                    <span>Import/Export</span>
+                </button>
                 <button class="btn btn-primary" id="addSectionBtn">
                     <i class="fas fa-plus"></i>
                     <span>Add Section</span>
@@ -45,10 +53,6 @@
             <button class="btn btn-secondary" id="installBtn" style="display: none;">
                 <i class="fas fa-download"></i>
                 <span>Install</span>
-            </button>
-            <button class="btn btn-secondary" id="importExportBtn">
-                <i class="fas fa-file-import"></i>
-                <span>Import/Export</span>
             </button>
             <div class="nav-separator"></div>
             <button class="btn btn-secondary" id="aboutBtn">
@@ -155,6 +159,21 @@
                     </button>
                 </div>
             </form>
+        </div>
+    </div>
+
+    <!-- Move App Modal -->
+    <div class="modal-overlay" id="moveAppModal">
+        <div class="modal">
+            <div class="modal-header">
+                <h2 class="modal-title">Move App To...</h2>
+                <button class="close-btn" id="closeMoveAppModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-content" id="moveAppSectionList">
+                <!-- Section list will be dynamically populated here -->
+            </div>
         </div>
     </div>
 
