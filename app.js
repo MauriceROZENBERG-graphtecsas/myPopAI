@@ -849,6 +849,22 @@ async function exportConfig() {
     const defaultJsonFilename = `${baseFilename}.json`;
     const defaultMarkdownFilename = `${baseFilename}.md`;
 
+    // 1. GENERATE CONTENT FOR NOTEBOOKLM
+    // Structure:
+    // Section Name
+    // URL
+    // URL
+    const markdownContent = sections
+        .filter(section => section.title !== 'BIZELIA AI Prompt Generation Tools')
+        .map(section => {
+            // "Just the Section name" - Plain text
+            const header = section.title;
+            // No bullets, just the URL per line
+            const appsList = section.apps.map(app => app.url).join('\r\n');
+            return `${header}\r\n${appsList}`;
+        })
+        .join('\r\n\r\n'); // Separate sections with a blank line for parser clarity
+
     // Use the modern File System Access API if available
     if (window.showSaveFilePicker) {
         try {
@@ -865,32 +881,25 @@ async function exportConfig() {
             await jsonWritable.close();
             showToast('JSON Configuration saved successfully', 'success');
 
-            // Save Markdown
-            const markdownContent = sections
-                .filter(section => section.title !== 'BIZELIA AI Prompt Generation Tools')
-                .flatMap(section => section.apps.map(app => app.url))
-                .join('\r\n');
-
+            // Save Markdown (Text Source)
             const markdownHandle = await window.showSaveFilePicker({
                 suggestedName: defaultMarkdownFilename,
                 types: [{
-                    description: 'Markdown Files',
-                    accept: { 'text/markdown': ['.md'] },
+                    description: 'Markdown/Text Files',
+                    accept: { 'text/markdown': ['.md', '.txt'] },
                 }],
             });
             const markdownWritable = await markdownHandle.createWritable();
             await markdownWritable.write(markdownContent);
             await markdownWritable.close();
-            showToast('Markdown Configuration saved successfully', 'success');
+            showToast('Source file saved successfully', 'success');
             
             return; // Exit after successful save
         } catch (error) {
-            // AbortError is expected if the user cancels the dialog.
             if (error.name === 'AbortError') {
                 showToast('Export cancelled', 'info');
                 return;
             }
-            // For other errors, log them and fall through to the legacy method.
             console.error('Error with showSaveFilePicker, falling back:', error);
             showToast('Save dialog failed, using fallback export.', 'error');
         }
@@ -907,11 +916,7 @@ async function exportConfig() {
     const filename = userFilename.trim() || baseFilename;
     const jsonFileToDownload = new File([dataStr], `${filename}.json`, { type: 'application/json' });
     
-    // Create and download Markdown
-    const markdownContent = sections
-        .filter(section => section.title !== 'BIZELIA AI Prompt Generation Tools')
-        .flatMap(section => section.apps.map(app => app.url))
-        .join('\r\n');
+    // Create File using the content generated at the start
     const markdownFileToDownload = new File([markdownContent], `${filename}.md`, { type: 'text/markdown' });
 
     showToast('Exporting configuration files...', 'success');
